@@ -2,7 +2,7 @@
 
 DKMS package that runs the ThinkPad T495 (AMD) Synaptics touchpad (`LEN2062`, TM3471) over **RMI4/SMBus** instead of PS/2 on Linux.
 
-Tested on a T495 with Fedora 44, kernel 7.2.9, Hyprland/libinput 1.31.
+Tested on a T495 with Fedora 44, kernel 7.2.9, Hyprland/libinput 1.31. Survives reboot and suspend/resume.
 
 ## Why
 
@@ -60,7 +60,6 @@ sudo grubby --update-kernel=ALL --remove-args="psmouse.synaptics_intertouch=1"
 
 - Sources are from v7.2.9. Building for another kernel series prints a warning; refresh the sources if the pad falls back to PS/2.
 - The kernel is tainted by the out-of-tree modules.
-- Suspend/resume is not yet verified on the T495.
 - Known glitch: the lighter-pressed finger sometimes holds its position for one frame mid-flick (5.4% of frames with fingers stacked vertically, 1.8% side by side).
 - Only the T495 (`LEN2062`) has been tested. The E495 (`LEN205D`) uses the same Windows driver group and may work too.
 
